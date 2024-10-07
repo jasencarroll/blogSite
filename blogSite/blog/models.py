@@ -21,7 +21,8 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now = True)
     status = models.CharField(
-        max_length=2,
+        max_length=250,
+        unique_for_date='publish',
         choices=Status, 
         default=Status.DRAFT
     )
